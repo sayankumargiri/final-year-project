@@ -9,7 +9,7 @@ async (req,res)=>{
       const cartItem = await Cart.findById(req.params.id);
 
       if (!cartItem) {
-         return res.status(404).json({ message: "Cart item not found" });
+         return res.status(404).json({ message: "404: Cart item not found" });
       }
 
       if (cartItem.user.toString() !== req.user._id.toString()) {
